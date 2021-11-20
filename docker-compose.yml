@@ -1,0 +1,8 @@
+version: '3'
+services:
+  blockmem:
+    image: TBD:$APP_VERSION
+    restart: unless-stopped
+    ports:
+      - 3000:80
+      - 3500:443

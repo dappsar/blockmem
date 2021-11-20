@@ -1,0 +1,9 @@
+**/node_modules/*
+**/scripts/*
+**/out/*
+**/build/*
+**/migrations/*
+**/*.ttf
+**/sw-template.js
+**/registerServiceWorker.js
+**/build-sw.js

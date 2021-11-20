@@ -1,0 +1,2 @@
+# para mantener la carpeta
+# aquí quedan los archivos cert.pem y key.pem, que tiene que generar cada desarrollador siguiendo las instrucciones del readme, para poder levantar el sitio en HTTPs con un certificado válido y, del tal forma, poder habilitar PWA, el service worker y las notificaciones Push.

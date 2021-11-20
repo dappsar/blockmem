@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+#
+# editar este archivo SOLO en linux, si se produce algún 
+# error en la ejecución en linux, borrar el archivo, crear
+# uno nuevo, copiar el contenido y darle permisos de ejecución
+# chmod +x docker-script
+set -o nounset \
+    -o errexit \
+    -o verbose \
+    -o xtrace
+
+
+# Set environment values if they exist as arguments
+if [ $# -ne 0 ]; then
+  echo "===> Overriding env params with args ..."
+  for var in "$@"
+  do
+    export "$var"
+  done
+fi
+
+echo "===> ENV Variables ..."
+env | sort
+
+echo "===> User"
+id
+
+
+echo "===> Running ... "
+exec serve -p 80 -s .
+
+
+
