@@ -1,8 +1,6 @@
-
+// SPDX-License-Identifier: erc721-xx
+pragma solidity >= 0.5.0;
 // File: @openzeppelin/contracts/introspection/IERC165.sol
-
-pragma solidity ^0.5.0;
-
 /**
  * @dev Interface of the ERC165 standard, as defined in the
  * [EIP](https://eips.ethereum.org/EIPS/eip-165).
@@ -25,10 +23,6 @@ interface IERC165 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/IERC721.sol
-
-pragma solidity ^0.5.0;
-
-
 /**
  * @dev Required interface of an ERC721 compliant contract.
  */
@@ -50,8 +44,6 @@ contract IERC721 is IERC165 {
     /**
      * @dev Transfers a specific NFT (`tokenId`) from one account (`from`) to
      * another (`to`).
-     *
-     * 
      *
      * Requirements:
      * - `from`, `to` cannot be zero.
@@ -80,9 +72,6 @@ contract IERC721 is IERC165 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol
-
-pragma solidity ^0.5.0;
-
 /**
  * @title ERC721 token receiver interface
  * @dev Interface for any contract that wants to support safeTransfers
@@ -108,9 +97,6 @@ contract IERC721Receiver {
 }
 
 // File: @openzeppelin/contracts/math/SafeMath.sol
-
-pragma solidity ^0.5.0;
-
 /**
  * @dev Wrappers over Solidity's arithmetic operations with added overflow
  * checks.
@@ -218,9 +204,6 @@ library SafeMath {
 }
 
 // File: @openzeppelin/contracts/utils/Address.sol
-
-pragma solidity ^0.5.0;
-
 /**
  * @dev Collection of functions related to the address type,
  */
@@ -248,10 +231,6 @@ library Address {
 }
 
 // File: @openzeppelin/contracts/drafts/Counters.sol
-
-pragma solidity ^0.5.0;
-
-
 /**
  * @title Counters
  * @author Matt Condon (@shrugs)
@@ -287,10 +266,6 @@ library Counters {
 }
 
 // File: @openzeppelin/contracts/introspection/ERC165.sol
-
-pragma solidity ^0.5.0;
-
-
 /**
  * @dev Implementation of the `IERC165` interface.
  *
@@ -341,15 +316,6 @@ contract ERC165 is IERC165 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/ERC721.sol
-
-pragma solidity ^0.5.0;
-
-
-
-
-
-
-
 /**
  * @title ERC721 Non-Fungible Token Standard basic implementation
  * @dev see https://eips.ethereum.org/EIPS/eip-721
@@ -642,10 +608,6 @@ contract ERC721 is ERC165, IERC721 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol
-
-pragma solidity ^0.5.0;
-
-
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -658,12 +620,6 @@ contract IERC721Enumerable is IERC721 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol
-
-pragma solidity ^0.5.0;
-
-
-
-
 /**
  * @title ERC-721 Non-Fungible Token with optional enumeration extension logic
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -859,10 +815,6 @@ contract ERC721Enumerable is ERC165, ERC721, IERC721Enumerable {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/IERC721Metadata.sol
-
-pragma solidity ^0.5.0;
-
-
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -874,12 +826,6 @@ contract IERC721Metadata is IERC721 {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/ERC721Metadata.sol
-
-pragma solidity ^0.5.0;
-
-
-
-
 contract ERC721Metadata is ERC165, ERC721, IERC721Metadata {
     // Token name
     string private _name;
@@ -965,12 +911,6 @@ contract ERC721Metadata is ERC165, ERC721, IERC721Metadata {
 }
 
 // File: @openzeppelin/contracts/token/ERC721/ERC721Full.sol
-
-pragma solidity ^0.5.0;
-
-
-
-
 /**
  * @title Full ERC721 Token
  * This implementation includes all the required and some optional functionality of the ERC721 standard

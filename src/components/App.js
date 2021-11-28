@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
-import MemoryToken from '../abis/MemoryToken.json'
+// import MemoryToken from '../abis/MemoryToken.json'
+import MemoryToken from '../abis/MemoryTokenRinkeby.json'
 import brain from '../brain.png'
 
 const CARD_ARRAY = [
@@ -85,10 +86,19 @@ class App extends Component {
 
     // Load smart contract
     const networkId = await web3.eth.net.getId()
-    const networkData = MemoryToken.networks[networkId]
-    if(networkData) {
+
+    let contractAddress = ''
+    if (networkId !== 4) {  // 4 = rinekby
+      try {
+        contractAddress = MemoryToken.networks[networkId].address
+      } catch {}
+    } else {
+      contractAddress = '0x0806f0185213892fed471bb7944175e88a63e3ae'
+    }
+
+    if(contractAddress) {
       const abi = MemoryToken.abi
-      const address = networkData.address
+      const address = contractAddress
       const token = new web3.eth.Contract(abi, address)
       this.setState({ token })
       const totalSupply = await token.methods.totalSupply().call()
@@ -137,7 +147,7 @@ class App extends Component {
     const optionOneId = this.state.cardsChosenId[0]
     const optionTwoId = this.state.cardsChosenId[1]
 
-    if(optionOneId == optionTwoId) {
+    if(optionOneId === optionTwoId) {
       alert('You have clicked the same image!')
     } else if (this.state.cardsChosen[0] === this.state.cardsChosen[1]) {
       alert('You found a match')
@@ -184,7 +194,7 @@ class App extends Component {
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            href="http:/github.com/dappsar/blockmem"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -208,6 +218,7 @@ class App extends Component {
                   { this.state.cardArray.map((card, key) => {
                     return(
                       <img
+                        alt=""
                         key={key}
                         src={this.chooseImage(key)}
                         data-id={key}
@@ -233,6 +244,7 @@ class App extends Component {
                     { this.state.tokenURIs.map((tokenURI, key) => {
                       return(
                         <img
+                          alt=""
                           key={key}
                           src={tokenURI}
                         />

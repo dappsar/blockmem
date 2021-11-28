@@ -1,5 +1,7 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: memorytoken
+pragma solidity > 0.5.0;
 
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.5.0/contracts/token/ERC721/ERC721Full.sol";
 import "./ERC721Full.sol";
 
 contract MemoryToken is ERC721Full  {
@@ -8,9 +10,9 @@ contract MemoryToken is ERC721Full  {
     }
 
     function mint(address _to, string memory _tokenURI) public returns(bool) {
-       uint _tokenId = totalSupply().add(1);
-       _mint(_to, _tokenId);
-       _setTokenURI(_tokenId, _tokenURI);
-       return true;
+        uint _tokenId = totalSupply().add(1);
+        _mint(_to, _tokenId);
+        _setTokenURI(_tokenId, _tokenURI);
+        return true;
     }
 }
